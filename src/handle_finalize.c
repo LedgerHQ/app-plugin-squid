@@ -35,8 +35,7 @@ static void finalize_lookup(ethPluginFinalize_t *msg, squid_parameters_t *contex
     }
 }
 
-void handle_finalize(void *parameters) {
-    ethPluginFinalize_t *msg = (ethPluginFinalize_t *) parameters;
+void handle_finalize(ethPluginFinalize_t *msg) {
     squid_parameters_t *context = (squid_parameters_t *) msg->pluginContext;
 
     msg->uiType = ETH_UI_TYPE_GENERIC;

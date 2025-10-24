@@ -251,8 +251,7 @@ static void handle_call_bridge(ethPluginProvideParameter_t *msg, squid_parameter
     }
 }
 
-void handle_provide_parameter(void *parameters) {
-    ethPluginProvideParameter_t *msg = (ethPluginProvideParameter_t *) parameters;
+void handle_provide_parameter(ethPluginProvideParameter_t *msg) {
     squid_parameters_t *context = (squid_parameters_t *) msg->pluginContext;
     printf_hex_array("Squid plugin provide parameter: ", PARAMETER_LENGTH, msg->parameter);
     PRINTF("param offset: %d\n", msg->parameterOffset);

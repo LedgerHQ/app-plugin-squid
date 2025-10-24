@@ -5,8 +5,7 @@ static void sent_network_token(squid_parameters_t *context) {
     context->tokens_found |= TOKEN_SENT_FOUND;
 }
 
-void handle_provide_token(void *parameters) {
-    ethPluginProvideInfo_t *msg = (ethPluginProvideInfo_t *) parameters;
+void handle_provide_token(ethPluginProvideInfo_t *msg) {
     squid_parameters_t *context = (squid_parameters_t *) msg->pluginContext;
     PRINTF("Plugin provide tokens : 0x%p, 0x%p\n", msg->item1, msg->item2);
 
